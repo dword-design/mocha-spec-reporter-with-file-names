@@ -1,6 +1,6 @@
 {
-    "name": "mocha-spec-reporter-with-file-names",
-    "version": "0.0.3",
+    "name": "@dword-design/mocha-spec-reporter-with-file-names",
+    "version": "0.0.1",
     "description": "Mocha default spec reporter with file names.",
     "keywords": [
         "mocha",
@@ -25,6 +25,9 @@
     },
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
+    "publishConfig": {
+        "access": "public"
+    },
     "scripts": {
         "compile": "rm -rf dist && virmator compile",
         "format": "virmator format",
