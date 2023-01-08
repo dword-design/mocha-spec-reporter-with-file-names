@@ -29,7 +29,7 @@
 
 import {MochaOptions, reporters, Runner, Suite, Test, utils} from 'mocha';
 import milliseconds from 'ms';
-import {relative} from 'path';
+import {relative, sep} from 'path';
 
 const Base = reporters.Base as typeof reporters.Base & {
     consoleLog: (...args: any[]) => void;
@@ -124,7 +124,7 @@ export class SpecReporterWithFileNames extends Base {
                 Base.consoleLog(
                     color('fileName', '%s%s'),
                     indent(),
-                    relative(process.cwd(), suite[fileKey] ?? ''),
+                    relative(process.cwd(), suite[fileKey] ?? '').split(sep).join('/'),
                 );
                 indents++;
             } else if (!isTopDescribe && suiteParent) {
